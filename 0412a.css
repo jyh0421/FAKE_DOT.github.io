@@ -164,6 +164,7 @@ header 영역 - 로고, 메인메뉴
     line-height: 160%;
     
     text-align: center
+    
     /*background-color: blanchedalmond;*/
 }
 
@@ -196,8 +197,12 @@ header 영역 - 로고, 메인메뉴
 #qqq{
     margin-top: 110px;
     margin-bottom: 5px;
-    
+    transition: all 0.3;
 }
+
+#qqq > img:hover{
+    width: 60%;
+} 
 
 
 
