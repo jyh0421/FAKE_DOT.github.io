@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAKE 닷!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 중앙 타이틀 -->
+    <div class="main-title">
+      <video autoplay muted id="background-video">
+          <source src="이미지/타이틀영상.mp4" type="video/mp4">
+      </video>
+      <div class="click-overlay"></div>
+    </div>
+    <!-- 바탕화면 -->
+    <div class="desktop" id="desktop">
+
+      <div class="folder">
+
+        <!-- 작동X 폴더 -->
+        <div class="icon111">
+            <img src="이미지/휴휴지통.png"class="icon-image111">
+            <span class="icon-label111">휴지통</span>
+        </div>  
+
+        <div class="icon222">
+          <img src="이미지/인터넷.png"class="icon-image222">
+          <span class="icon-label222">인터넷</span>
+        </div>  
+
+        <div class="icon333">
+          <img src="이미지/제어판.png"class="icon-image333">
+          <span class="icon-label333">제어판</span>
+        </div> 
+
+        <div class="icon444">
+          <img src="이미지/그림판.png"class="icon-image444">
+          <span class="icon-label444">그림판</span>
+        </div> 
+
+
+
+
+
+        <!-- 연예 폴더 -->
+        <div class="icon" onclick="openWindow('folder1')" id="folder1">
+            <img src="이미지/카테고리 폴더.png" alt="연예" class="icon-image">
+            <span class="icon-label">연예뉴스</span>
+        </div>
+
+        <!-- 정치 폴더 -->
+        <div class="icon2" onclick="openWindow('folder2')" id="folder2">
+            <img src="이미지/카테고리 폴더.png" alt="정치" class="icon-image2">
+            <span class="icon-label2">정치뉴스</span>
+        </div>
+
+        <!-- 사회 폴더 -->
+        <div class="icon3" onclick="openWindow('folder3')" id="folder3">
+            <img src="이미지/카테고리 폴더.png" alt="사회" class="icon-image3">
+            <span class="icon-label3">사회뉴스</span>
+        </div>
+
+        <!-- 생활/문화 폴더 -->
+        <div class="icon4" onclick="openWindow('folder4')" id="folder4">
+            <img src="이미지/카테고리 폴더.png" alt="생활/문화" class="icon-image4">
+            <span class="icon-label4">생활뉴스</span>
+        </div>
+
+        <!-- 진짜뉴스 -->
+        <!-- <div class="icon5" onclick="openWindow('realNews')" id="realNews"> -->
+        <div class="icon5" onclick="openArchive()" id="realNews">
+            <img src="이미지/보관함.png" alt="진짜뉴스" class="icon-image5">
+            <span class="icon-label5"><p>기록</span>
+        </div>
+
+        <!-- 구별법 -->
+        <div class="icon6" onclick="openWindow('guidelines')" id="guidelines">
+            <img src="이미지/구별법(검색).png" alt="구별법" class="icon-image6">
+            <span class="icon-label6">돋보기</span>
+        </div>
+
+        <!-- 관점 -->
+        <div class="icon7" onclick="showSinglePopup('popup-perspectives')" id="perspectives">
+          <img src="이미지/관점.png" alt="관점" class="icon-image7">
+          <span class="icon-label7">메모</span>
+      </div>
+
+            
+        <!-- 관점 팝업 -->
+       <div class="popup" id="perspectives-popup">
+            <div class="popup-header">
+              <span class="popup-title">관점</span>
+                <button class="popup-btn close-btn2" onclick="closePopup('perspectives-popup')">X</button>
+            </div>
+            <div class="popup-content">
+              <p>관점</p>
+            </div>
+       </div>
+
+
+        <!-- 구별법 팝업 -->
+        <div class="popup" id="popup-guidelines">
+          <div class="popup-header">
+            <span class="popup-title">구별법</span>
+              <button class="popup-btn close-btn2" onclick="closePopup('popup-guidelines')">X</button>
+          </div>
+          <div class="popup-content">
+            <p>구별법</p>
+          </div>
+     </div>
+
+       <!-- 진짜뉴스 팝업 -->
+       <!--<div class="popup" id="popup-realNews">
+         <div class="popup-header">
+           <span class="popup-title">진짜뉴스 보관함</span>
+             <button class="popup-btn close-btn2" onclick="closePopup('popup-realNews')">X</button>
+         </div>
+        <div class="popup-content">
+            <p>여기에 진짜뉴스가 저장됩니다.</p>
+        </div>-->
+       </div>
+
+
+    <!--ox예제-->
+    <!--
+    <button class="popup-btn open-btn" onclick="moveToFolder()">O </button>
+    <button class="popup-btn close-btn" onclick="closePopup('popup2')">X</button> -->
+
+
+    <!-- 연예 팝업창 -->
+    <div class="popup real-news" id="popup1">
+      <div class="popup-header">
+        <span class="popup-title">진짜닷!</span>
+        <div class="popup-buttons">
+          <button class="popup-btn open-btn">O</button>
+          <button class="popup-btn close-btn">X</button>
+        </div>
+      </div>
+      <div class="popup-content">
+
+        <P>진짜뉴스</P>
+
+        <p>내용</p>
+      </div>
+    </div>
+    
+    
+
+    <div class="popup fake-news" id="popup2">
+      <div class="popup-header">
+        <span class="popup-title">가짜닷!</span>
+        <div class="popup-buttons">
+          <button class="popup-btn open-btn">O </button>
+          <button class="popup-btn close-btn">X</button>
+        </div>
+      </div>
+      <div class="popup-content">
+
+        <P>빅뱅 GD '마약 혐의'로 입건 </P>
+        
+        <p>25일 뉴스1 취재를 종합하면 인천경찰청은 마약류 관리에 관한 법률 위반 혐의로 권씨를 불구속 입건했다.</p>
+      </div>
+    </div>
+
+    <div class="popup fake-news" id="popup3">
+      <div class="popup-header">
+        <span class="popup-title">가짜닷!</span>
+        <div class="popup-buttons">
+          <button class="popup-btn open-btn">O</button>
+          <button class="popup-btn close-btn">X</button>
+        </div>
+      </div>
+      <div class="popup-content">
+        <p>사과는 없었다…민희진 구구절절 100분 원맨쇼</p>
+        <p>상처받은 이들에 대한 사과는 없었다. 민희진 어도어 대표는 "모두가 피해자"라며 언급하기 싫다는 뜻을 밝혔다. </p>
+      </div>
+    </div>
+
+    <div class="popup real-news" id="popup4">
+      <div class="popup-header">
+        <span class="popup-title">진짜닷!</span>
+        <div class="popup-buttons">
+          <button class="popup-btn open-btn">O</button>
+          <button class="popup-btn close-btn">X</button>
+        </div>
+      </div>
+      <div class="popup-content">
+
+        <P>진짜뉴스</P>
+
+        <p>내용</p>
+      </div>
+    </div>
+
+    <div class="popup fake-news" id="popup5">
+      <div class="popup-header">
+        <span class="popup-title">가짜닷!</span>
+        <div class="popup-buttons">
+          <button class="popup-btn open-btn">O</button>
+          <button class="popup-btn close-btn">X</button>
+        </div>
+      </div>
+      <div class="popup-content">
+        <p>사과는 없었다…민희진 구구절절 100분 원맨쇼</p>
+        <p>상처받은 이들에 대한 사과는 없었다. 민희진 어도어 대표는 "모두가 피해자"라며 언급하기 싫다는 뜻을 밝혔다. </p>
+      </div>
+    </div>
+
+     <!-- 정치 팝업창 -->
+     <div class="popup fake-news" id="popup-politics1">
+      <div class="popup-header">
+        <span class="popup-title">가짜닷!</span>
+        <div class="popup-buttons">
+          <button class="popup-btn open-btn1">O</button>
+          <button class="popup-btn close-btn" onclick="closePopup('popup-politics1')">X</button>
+        </div>
+      </div>
+      <div class="popup-content">
+        <p>뉴스내용</p>
+      </div>
+    </div>
+
+    <div class="popup real-news" id="popup-politics2">
+      <div class="popup-header">
+        <span class="popup-title">진짜닷!</span>
+        <div class="popup-buttons">
+          <button class="popup-btn open-btn" onclick="moveToFolder()">O</button>
+          <button class="popup-btn close-btn1">X</button>
+        </div>
+      </div>
+      <div class="popup-content">
+        <p>뉴스내용</p>
+      </div>
+    </div>
+
+    <div class="popup real-news" id="popup-politics">
+      <div class="popup-header">
+        <span class="popup-title">진짜닷!</span>
+        <div class="popup-buttons">
+          <button class="popup-btn open-btn" onclick="moveToFolder()">O</button>
+          <button class="popup-btn close-btn1">X</button>
+        </div>
+      </div>
+      <div class="popup-content">
+        <p>뉴스내용</p>
+      </div>
+    </div>
+
+    <!-- 영상 종료(또는 인트로에서 클릭) 후 보여지는 설명 화면 -->
+    <div id="instruction">
+      <dis class="ins-header">
+        <span class="ins-title"> 웹 소개 </span> 
+      <div class="close-button"></div>
+      </dis>
+      어쩌구, 저쩌구...
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
