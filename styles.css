@@ -1,0 +1,612 @@
+/* 글로벌 스타일 */
+
+body {
+    font-family: 'establishRetrosansOTF', 'bitbit', Arial, sans-serif; /* 새 폰트를 우선 적용 */
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 페이드 인/아웃 */
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 메인 타이틀 (영상 배경 추가) */
+.main-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 화면 비율에 맞게 채우기 */
+    z-index: -1; /* 콘텐츠보다 뒤에 위치 */
+}
+
+/* 클릭 가능한 투명 오버레이 */
+.click-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* 클릭 영역을 최상위로 설정 */
+    cursor: pointer;
+}
+
+/* 데스크탑 스타일 */
+.desktop {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    background: url('이미지/배경예시1.png') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+
+
+/* 기본적으로 폴더를 숨김 */
+.desktop {
+    visibility: hidden; /* 화면에서 보이지 않음 */
+    opacity: 0; /* 완전히 투명 */
+    transition: opacity 0.5s ease-in-out; /* 애니메이션 효과 */
+}
+
+/* 폴더 표시 시 애니메이션 효과 */
+.desktop.show {
+    visibility: visible; /* 화면에 보이도록 설정 */
+    opacity: 1; /* 불투명 */
+}
+/* 아이콘 스타일 */
+
+/* 연예 */
+.icon {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    margin: 0; /* 여백 초기화 */
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+
+    /* 왼쪽 아래로 이동 */
+    position: absolute; /* 부모 요소 기준으로 위치 설정 */
+    bottom: 310px; /* 아래쪽에서 떨어짐 */
+    left: 31px; /* 왼쪽에서 떨어짐 */
+}
+
+.icon-image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 2px; /* 이미지 아래 간격 */
+}
+
+.icon-label {
+    font-size: 14px;
+    text-align: center;
+    margin-top: -10px; /* 이미지와 글자 간격 */
+}
+
+
+/* 정치 */
+.icon2 {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    margin: 0; /* 여백 초기화 */
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+
+    /* 왼쪽 아래로 이동 */
+    position: absolute; /* 부모 요소 기준으로 위치 설정 */
+    bottom: 220px; /* 아래쪽에서 떨어짐 */
+    left: 31px; /* 왼쪽에서 떨어짐 */
+}
+
+.icon-image2 {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 2px; /* 이미지 아래 간격 */
+}
+
+.icon-label2 {
+    font-size: 14px;
+    text-align: center;
+    margin-top: -10px; /* 이미지와 글자 간격 */
+}
+
+
+/* 사회 */
+.icon3 {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    margin: 0; /* 여백 초기화 */
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+
+    /* 왼쪽 아래로 이동 */
+    position: absolute; /* 부모 요소 기준으로 위치 설정 */
+    bottom: 130px; /* 아래쪽에서 떨어짐 */
+    left: 31px; /* 왼쪽에서 떨어짐 */
+}
+
+.icon-image3 {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 2px; /* 이미지 아래 간격 */
+}
+
+.icon-label3 {
+    font-size: 14px;
+    text-align: center;
+    margin-top: -10px; /* 이미지와 글자 간격 */
+}
+
+
+/* 생활/문화 */
+.icon4 {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    margin: 0; /* 여백 초기화 */
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+
+    /* 왼쪽 아래로 이동 */
+    position: absolute; /* 부모 요소 기준으로 위치 설정 */
+    bottom: 40px; /* 아래쪽에서 떨어짐 */
+    left:30px; /* 왼쪽에서 떨어짐 */
+}
+
+.icon-image4 {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 2px; /* 이미지 아래 간격 */
+}
+
+.icon-label4 {
+    font-size: 14px;
+    text-align: center;
+    margin-top: -10px; /* 이미지와 글자 간격 */
+}
+
+/* 보관함 */
+.icon5 {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    margin: 0; /* 여백 초기화 */
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+
+    /* 왼쪽 아래로 이동 */
+    position: absolute; /* 부모 요소 기준으로 위치 설정 */
+    bottom: 280px; /* 아래쪽에서 떨어짐 */
+    right: 30px; /* 오른쪽에서 떨어짐 */
+}
+
+.icon-image5 {
+    width: 55px;
+    height: 50px;
+    margin-bottom: 2px; /* 이미지 아래 간격 */
+}
+
+.icon-label5 {
+    font-size: 14px;
+    text-align: center;
+    margin-top: -5px; /* 이미지와 글자 간격 */
+}
+p {
+    margin: 1px 0; /* 위아래 간격을 5px로 설정 */
+  }
+
+/* 구별법 */
+.icon6 {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    margin: 0; /* 여백 초기화 */
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+
+    /* 오른쪽 아래로 이동 */
+    position: absolute; /* 부모 요소 기준으로 위치 설정 */
+    bottom: 120px; /* 아래쪽에서 떨어짐 */
+    right: 31px; /* 오른쪽에서 떨어짐 */
+}
+
+.icon-image6 {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 2px; /* 이미지 아래 간격 */
+}
+
+.icon-label6 {
+    font-size: 14px;
+    text-align: center;
+    margin-top: -5px; /* 이미지와 글자 간격 */
+}
+
+
+
+/* 관점 */
+.icon7 {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    margin: 0; /* 여백 초기화 */
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+
+    /* 오른쪽 아래로 이동 */
+    position: absolute; /* 부모 요소 기준으로 위치 설정 */
+    bottom: 20px; /* 아래쪽에서 떨어짐 */
+    right: 31px; /* 오른쪽에서 떨어짐 */
+}
+
+.icon-image7 {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 2px; /* 이미지 아래 간격 */
+}
+
+.icon-label7 {
+    font-size: 14px;
+    text-align: center;
+    margin-top: -5px; /* 이미지와 글자 간격 */
+}
+
+
+
+/* 작동X 아이콘 휴지통 */
+.icon111 {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    margin: 0; /* 여백 초기화 */
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+
+    /* 오른쪽 아래로 이동 */
+    position: absolute; /* 부모 요소 기준으로 위치 설정 */
+    top: 30px; /* 위쪽에서 떨어짐 */
+    left: 31px; /* 오른쪽에서 떨어짐 */
+}
+
+.icon-image111 {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 2px; /* 이미지 아래 간격 */
+}
+
+.icon-label111 {
+    font-size: 14px;
+    text-align: center;
+    margin-top: -2px; /* 이미지와 글자 간격 */
+}
+
+
+
+/* 작동X 아이콘 인터넷 */
+.icon222 {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    margin: 0; /* 여백 초기화 */
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+
+    /* 오른쪽 아래로 이동 */
+    position: absolute; /* 부모 요소 기준으로 위치 설정 */
+    top: 125px; /* 위쪽에서 떨어짐 */
+    left: 31px; /* 오른쪽에서 떨어짐 */
+}
+
+.icon-image222 {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 2px; /* 이미지 아래 간격 */
+}
+
+.icon-label222 {
+    font-size: 14px;
+    text-align: center;
+    margin-top: -2px; /* 이미지와 글자 간격 */
+}
+
+
+/* 작동X 아이콘 제어판 */
+.icon333 {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    margin: 0; /* 여백 초기화 */
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+
+    /* 오른쪽 아래로 이동 */
+    position: absolute; /* 부모 요소 기준으로 위치 설정 */
+    top: 30px; /* 위쪽에서 떨어짐 */
+    right: 31px; /* 오른쪽에서 떨어짐 */
+}
+
+.icon-image333 {
+    width: 65px;
+    height: 50px;
+    margin-bottom: 2px; /* 이미지 아래 간격 */
+}
+
+.icon-label333 {
+    font-size: 14px;
+    text-align: center;
+    margin-top: -2px; /* 이미지와 글자 간격 */
+}
+
+
+/* 작동X 아이콘 그림판 */
+.icon444 {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    margin: 0; /* 여백 초기화 */
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+
+    /* 오른쪽 아래로 이동 */
+    position: absolute; /* 부모 요소 기준으로 위치 설정 */
+    top: 125px; /* 위쪽에서 떨어짐 */
+    right: 31px; /* 오른쪽에서 떨어짐 */
+}
+
+.icon-image444 {
+    width: 65px;
+    height: 50px;
+    margin-bottom: 2px; /* 이미지 아래 간격 */
+}
+
+.icon-label444 {
+    font-size: 14px;
+    text-align: center;
+    margin-top: -2px; /* 이미지와 글자 간격 */
+}
+
+
+
+/*팝업창*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes moveToFolder {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(50px, 50px) scale(0.1);
+        opacity: 0;
+    }
+}
+
+/* 흔들기 애니메이션*/
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-2px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(4px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-8px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(8px, 0, 0);
+    }
+}
+.apply-shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.popup {
+    position: fixed;
+    /*bottom: 100px;*/
+    right: 200px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 10;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #de89ff;
+    border-bottom: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.popup-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.popup-buttons {
+    display: flex;
+}
+
+.popup-btn {
+    margin-left: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.open-btn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.close-btn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.popup-content {
+    padding: 15px;
+    font-size: 14px;
+}
+
+.news-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .news-content {
+    font-size: 16px;
+  }
+  
+  .news-image {
+    width: 70%;
+    max-width: 300px;
+    margin-top: 10px;
+  }
+
+
+  .news-image2 {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+  }
+
+  .popup-content p {
+    font-size: 16px;
+    line-height: 1.6; /* 행간 조정 */
+    margin-bottom: 10px; /* 단락 간격 */
+  }
+  
+  .news-content strong {
+    font-size: 18px;
+    color: #333;
+  }
+
+  .popup-content .intro-content {
+    font-size: 17px;
+    font-weight: 400;
+    color: #444;
+  }
+  
+  .news-content strong2 {
+    font-size: 18px;
+    color: #FF3EDB;
+  }
+
+/* 영상 종료(또는 인트로에서 클릭) 후 보여지는 설명 화면 스타일 */
+#instruction {
+    max-width: 600px; /* 전체 컨테이너 너비 제한 */
+    margin: 20px auto; /* 가운데 정렬 */
+    padding: 20px;
+    background-color: #f9f9f9; /* 배경 색상 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .ins-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .ins-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .new1 p {
+    font-size: 16px;
+    line-height: 1.8; /* 줄 간격 */
+    color: #555;
+    text-align: justify; /* 텍스트 단 정렬 */
+    margin-bottom: 15px;
+  }
+  
+  .new1 p strong {
+    color: #FF3EDB; /* 강조된 텍스트 색상 */
+  }
+
+  
+  .close-button {
+    width: 20px;
+    height: 20px;
+    background-color: #ff4848;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
